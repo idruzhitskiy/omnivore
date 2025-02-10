@@ -44,6 +44,7 @@ export const getBrowser = async (): Promise<Browser> => {
       '--disable-background-networking',
       '--disable-gpu',
       '--disable-software-rasterizer',
+      `--proxy-server=${process.env['FIREFOX_HTTP_PROXY']}:${process.env['FIREFOX_HTTP_PROXY_PORT']}`,
     ],
     extraPrefsFirefox: {
       'network.proxy.type': 1,
