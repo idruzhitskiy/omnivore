@@ -22,6 +22,7 @@ export const getBrowser = async (): Promise<Browser> => {
   }
 
   console.log('Starting puppeteer browser')
+  console.log(`Proxy is --proxy-server=socks5://${process.env['SOCKS_PROXY']}:${process.env['SOCKS_PORT']}`)
 
   browserInstance = (await puppeteer.launch({
     args: [
