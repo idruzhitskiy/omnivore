@@ -46,11 +46,8 @@ export const getBrowser = async (): Promise<Browser> => {
       '--disable-software-rasterizer',
     ],
     extraPrefsFirefox: {
-      'network.proxy.type': 1,
-      'network.proxy.http': process.env['FIREFOX_HTTP_PROXY'] ?? "",
-      'network.proxy.http_port': parseInt(process.env['FIREFOX_HTTP_PROXY_PORT'] ?? "0"),
-      'network.proxy.ssl': process.env['FIREFOX_HTTPS_PROXY'] ?? "",
-      'network.proxy.ssl_port': parseInt(process.env['FIREFOX_HTTPS_PROXY_PORT'] ?? "0"),
+      'network.proxy.socks': process.env['SOCKS_PROXY'] ?? "",
+      'network.proxy.socks_port': parseInt(process.env['SOCKS_PORT'] ?? "0")
     },
     defaultViewport: {
       deviceScaleFactor: 1,
