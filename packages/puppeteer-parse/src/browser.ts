@@ -44,6 +44,7 @@ export const getBrowser = async (): Promise<Browser> => {
       '--disable-background-networking',
       '--disable-gpu',
       '--disable-software-rasterizer',
+      `--proxy-server=socks5://${process.env['SOCKS_PROXY']}:${process.env['SOCKS_PORT']}`,
     ],
     extraPrefsFirefox: {
       'network.proxy.socks': process.env['SOCKS_PROXY'] ?? "",
